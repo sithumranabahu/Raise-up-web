@@ -10,12 +10,10 @@ package com.raiseup.models;
  * @author Madushan
  */
 public class Project {
-    
     private int id;
-    private String title;
+    private String category;
+    private String price;
     private String description;
-    private String organizer;
-    private String target;
 
     /**
      * @return the id
@@ -32,17 +30,31 @@ public class Project {
     }
 
     /**
-     * @return the title
+     * @return the category
      */
-    public String getTitle() {
-        return title;
+    public String getCategory() {
+        return category;
     }
 
     /**
-     * @param title the title to set
+     * @param category the category to set
      */
-    public void setTitle(String title) {
-        this.title = title;
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    /**
+     * @return the price
+     */
+    public String getPrice() {
+        return price;
+    }
+
+    /**
+     * @param price the price to set
+     */
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     /**
@@ -58,35 +70,6 @@ public class Project {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    /**
-     * @return the organizer
-     */
-    public String getOrganizer() {
-        return organizer;
-    }
-
-    /**
-     * @param organizer the organizer to set
-     */
-    public void setOrganizer(String organizer) {
-        this.organizer = organizer;
-    }
-
-    /**
-     * @return the target
-     */
-    public String getTarget() {
-        return target;
-    }
-
-    /**
-     * @param target the target to set
-     */
-    public void setTarget(String target) {
-        this.target = target;
-    }
-    
     
     
 }

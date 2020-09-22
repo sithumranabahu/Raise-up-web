@@ -3,26 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.raiseup.connection;
+package com.raiseup.db;
 
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
  *
- * @author Nayani
+ * @author Madushan
  */
-public class Connection {
-        private static final String URL = "jdbc:mysql://localhost:3306/raiseupdb?useSSL=false";
+public class dbconnection {
+
+    // database properties
+    private static final String URL = "jdbc:mysql://localhost:3306/raise-up-db?useSSL=false";
+
+    private static final String DRIVER = "com.mysql.jdbc.Driver";
 
     private static final String USERNAME = "root";
 
-    private static final String PASSWORD = "naya";
+    private static final String PASSWORD = "Madu";
 
-    private static java.sql.Connection connection = null;
+    private static Connection connection = null;
 
     //define static method
-    public static java.sql.Connection openconnection() {
+    public static Connection openconnection() {
 
         //check the connection
         if (connection != null) {
@@ -31,10 +36,12 @@ public class Connection {
 
             try {
                 //load the driver
-                Class.forName("com.mysql.cj.jdbc.Driver");
+                Class.forName(DRIVER);
 
                 //Get the connection
-                connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+                 connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+                 
+                 
                 
             } catch (ClassNotFoundException | SQLException e) {
             }
@@ -45,4 +52,3 @@ public class Connection {
         }
     }
 }
-
